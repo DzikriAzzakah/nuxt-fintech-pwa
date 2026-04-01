@@ -10,6 +10,9 @@ export const useTransaction = () => {
   const isDeletingTransaction = ref(false);
 
   const fetchTransactions = (groupId: string) => {
+    isLoading.value = true;
+    let isFirstSnapshot = true;
+
     const q = query(
       collection(db, "transactions"),
       where("groupId", "==", groupId)
@@ -20,6 +23,12 @@ export const useTransaction = () => {
         id: doc.id,
         ...doc.data()
       })) as Transaction[];
+
+      // Set loading to false after first snapshot arrives
+      if (isFirstSnapshot) {
+        isLoading.value = false;
+        isFirstSnapshot = false;
+      }
     });
   };
 
