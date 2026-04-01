@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 720" width="540" height="720">
+  <!-- Phone background -->
+  <rect width="540" height="720" fill="#F9FAFB"/>
+  
+  <!-- Header -->
+  <rect width="540" height="80" fill="#F3F4F6"/>
+  <text x="30" y="50" font-size="28" font-weight="bold" fill="#1F2937" font-family="Arial">Overview</text>
+  
+  <!-- Balance card -->
+  <rect x="20" y="100" width="500" height="120" rx="20" fill="url(#grad1)"/>
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <text x="40" y="125" font-size="14" fill="#E0E7FF" font-family="Arial">Total Balance</text>
+  <text x="40" y="160" font-size="32" font-weight="bold" fill="white" font-family="Arial">Rp 2,500,000</text>
+  
+  <!-- Filter buttons -->
+  <rect x="20" y="240" width="500" height="40" rx="8" fill="#E5E7EB"/>
+  <rect x="30" y="250" width="60" height="20" rx="4" fill="#3B82F6"/>
+  <text x="45" y="262" font-size="12" fill="white" text-anchor="middle" font-family="Arial">All</text>
+  <rect x="105" y="250" width="70" height="20" rx="4" fill="white"/>
+  <text x="140" y="262" font-size="12" fill="#6B7280" text-anchor="middle" font-family="Arial">Income</text>
+  <rect x="190" y="250" width="80" height="20" rx="4" fill="white"/>
+  <text x="230" y="262" font-size="12" fill="#6B7280" text-anchor="middle" font-family="Arial">Expense</text>
+  
+  <!-- Transaction items -->
+  <g>
+    <!-- Item 1 -->
+    <rect x="20" y="300" width="500" height="70" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <circle cx="50" cy="335" r="20" fill="#FFF7ED"/>
+    <text x="50" y="340" font-size="24" text-anchor="middle">🍜</text>
+    <text x="85" y="320" font-size="14" font-weight="bold" fill="#1F2937" font-family="Arial">Food</text>
+    <text x="85" y="345" font-size="12" fill="#9CA3AF" font-family="Arial">01 Apr 2026 • Lunch</text>
+    <text x="495" y="335" font-size="14" font-weight="bold" fill="#1F2937" text-anchor="end" font-family="Arial">-Rp 45,000</text>
+    
+    <!-- Item 2 -->
+    <rect x="20" y="385" width="500" height="70" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <circle cx="50" cy="420" r="20" fill="#E0F2FE"/>
+    <text x="50" y="425" font-size="24" text-anchor="middle">⛽</text>
+    <text x="85" y="405" font-size="14" font-weight="bold" fill="#1F2937" font-family="Arial">Fuel</text>
+    <text x="85" y="430" font-size="12" fill="#9CA3AF" font-family="Arial">01 Apr 2026 • Gas</text>
+    <text x="495" y="420" font-size="14" font-weight="bold" fill="#1F2937" text-anchor="end" font-family="Arial">-Rp 125,000</text>
+  </g>
+  
+  <!-- Bottom nav bar -->
+  <rect y="680" width="540" height="40" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+  <text x="80" y="705" font-size="24" text-anchor="middle">🏠</text>
+  <text x="270" y="705" font-size="24" text-anchor="middle">📊</text>
+  
+  <!-- Add button -->
+  <circle cx="500" cy="640" r="28" fill="#3B82F6"/>
+  <text x="500" y="650" font-size="36" fill="white" text-anchor="middle" font-family="Arial">+</text>
+</svg>

@@ -1,0 +1,87 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  compatibilityDate: '2025-07-15',
+  devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
+  modules: ['@vite-pwa/nuxt'],
+  pwa: {
+    strategies: 'auto',
+    manifest: {
+      name: "Shared Finance",
+      short_name: "Finance",
+      description: "Track shared expenses and manage finances with your group",
+      theme_color: "#3B82F6",
+      background_color: "#F9FAFB",
+      display: "standalone",
+      scope: "/",
+      start_url: "/",
+      orientation: "portrait-primary",
+      categories: ["finance", "productivity"],
+      icons: [
+        {
+          src: "/icon-192.svg",
+          sizes: "192x192",
+          type: "image/svg+xml",
+          purpose: "any"
+        },
+        {
+          src: "/icon-512.svg",
+          sizes: "512x512",
+          type: "image/svg+xml",
+          purpose: "any"
+        },
+        {
+          src: "/icon-192-maskable.svg",
+          sizes: "192x192",
+          type: "image/svg+xml",
+          purpose: "maskable"
+        },
+        {
+          src: "/icon-512-maskable.svg",
+          sizes: "512x512",
+          type: "image/svg+xml",
+          purpose: "maskable"
+        }
+      ],
+      screenshots: [
+        {
+          src: "/screenshot-1.svg",
+          sizes: "540x720",
+          type: "image/svg+xml",
+          form_factor: "narrow"
+        },
+        {
+          src: "/screenshot-2.svg",
+          sizes: "540x720",
+          type: "image/svg+xml",
+          form_factor: "narrow"
+        }
+      ]
+    },
+    workbox: {
+      globPatterns: ['**/*.{js,css,html,png,svg,ico,woff,woff2,ttf}'],
+      runtimeCaching: [
+        {
+          urlPattern: 'https://fonts.googleapis.com/.*',
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'google-fonts-cache',
+            expiration: {
+              maxEntries: 20,
+              maxAgeSeconds: 60 * 60 * 24 * 365
+            }
+          }
+        }
+      ]
+    },
+    client: {
+      installPrompt: true,
+      periodicSyncForUpdates: 20 * 60 * 1000
+    }
+  },
+  postcss: {
+    plugins: {
+      '@tailwindcss/postcss': {},
+    },
+  },
+})
