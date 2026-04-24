@@ -4,6 +4,7 @@ import dayjs from 'dayjs'
 
 const { transactions, isLoading, fetchTransactions, addTransaction } = useTransaction()
 const { exportToCSV, importFromCSV } = useImportExport()
+const { fetchCustomCategories } = useCategory()
 const groupId = "shared-group"
 
 const filterType = ref('all')
@@ -17,6 +18,7 @@ const currentSlide = ref(0)
 
 onMounted(() => {
   fetchTransactions(groupId)
+  fetchCustomCategories(groupId)
   const now = dayjs()
   customFromDate.value = now.startOf('week').format('YYYY-MM-DD')
   customToDate.value = now.endOf('week').format('YYYY-MM-DD')

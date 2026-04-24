@@ -3,6 +3,7 @@ import { onMounted, ref, computed } from 'vue'
 import dayjs from 'dayjs'
 
 const { transactions, isLoading, fetchTransactions, getDateRangeData } = useTransaction()
+const { fetchCustomCategories } = useCategory()
 
 const filterType = ref('this-week')
 const customFromDate = ref('')
@@ -11,6 +12,7 @@ const customToDate = ref('')
 // Initialize with current week
 onMounted(() => {
   fetchTransactions("shared-group")
+  fetchCustomCategories("shared-group")
   const now = dayjs()
   customFromDate.value = now.startOf('week').format('YYYY-MM-DD')
   customToDate.value = now.endOf('week').format('YYYY-MM-DD')
