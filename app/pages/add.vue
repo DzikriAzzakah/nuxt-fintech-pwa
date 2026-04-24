@@ -3,6 +3,7 @@ import { ref, onMounted, watch } from 'vue'
 import dayjs from 'dayjs'
 
 const { addTransaction, fetchTransactions, isAddingTransaction } = useTransaction()
+const { fetchCustomCategories, expenseCategories, incomeCategories } = useCategory()
 const groupId = "shared-group"
 
 const amount = ref('')
@@ -19,6 +20,7 @@ const error = ref('')
 
 onMounted(() => {
   fetchTransactions(groupId)
+  fetchCustomCategories(groupId)
 })
 
 watch(type, (newVal) => {
@@ -80,7 +82,7 @@ const submit = async () => {
         <div>
           <label class="block text-sm font-medium text-gray-600 mb-1">Category</label>
           <select v-model="category" class="w-full bg-gray-50 border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option v-for="(meta, key) in (type === 'income' ? INCOME_CATEGORIES : EXPENSE_CATEGORIES)" :key="key" :value="key">{{ meta.emoji }} {{ meta.label }}</option>
+            <option v-for="(meta, key) in (type === 'income' ? incomeCategories : expenseCategories)" :key="key" :value="key">{{ meta.emoji }} {{ meta.label }}</option>
           </select>
         </div>
         <div>

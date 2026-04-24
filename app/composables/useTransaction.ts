@@ -88,8 +88,8 @@ export const useTransaction = () => {
     const currentPeriod = filterByDateRange(startDate, endDate);
     const comparePeriod = filterByDateRange(compareStartDate, compareEndDate);
 
-    const currentGrouped = {};
-    const compareGrouped = {};
+    const currentGrouped: Record<string, number> = {};
+    const compareGrouped: Record<string, number> = {};
 
     currentPeriod.forEach(t => {
       if (t.type === 'expense') {

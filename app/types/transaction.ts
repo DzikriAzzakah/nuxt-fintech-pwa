@@ -8,7 +8,7 @@ export interface Transaction {
   groupId: string;
   amount: number;
   type: "income" | "expense";
-  category: "food" | "snacking" | "laundry" | "fuel" | "vehicle" | "bodycare" | "skincare" | "clothes" | "rent" | "family" | "unexpected" | "salary" | "freelance" | "bonus" | "investment" | "cashback" | "transfer" | "otherIn";
+  category: string;
   note: string;
   createdAt: number;
   split?: SplitUser[];
