@@ -18,10 +18,10 @@ export default defineNuxtConfig({
   pwa: {
     strategies: 'generateSW',
     manifest: {
-      name: "Shared Finance",
-      short_name: "Finance",
-      description: "Track shared expenses and manage finances with your group",
-      theme_color: "#3B82F6",
+      name: "Couple Apps",
+      short_name: "Couple",
+      description: "Your shared space — finance, dates, and more, together",
+      theme_color: "#f43f5e",
       background_color: "#F9FAFB",
       display: "standalone",
       scope: "/",

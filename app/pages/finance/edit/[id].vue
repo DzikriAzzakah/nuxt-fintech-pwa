@@ -60,7 +60,7 @@ const save = async () => {
 
   try {
     await editTransaction(id, transactionData)
-    navigateTo('/')
+    navigateTo('/finance')
   } catch (err) {
     console.error('editTransaction failed:', err)
     error.value = err?.message ?? 'Failed to save. Check console for details.'
@@ -71,7 +71,7 @@ const remove = async () => {
   if (!confirm('Are you sure you want to delete this transaction?')) return
   try {
     await deleteTransaction(id)
-    navigateTo('/')
+    navigateTo('/finance')
   } catch (err) {
     console.error('deleteTransaction failed:', err)
     error.value = err?.message ?? 'Failed to delete. Check console for details.'
@@ -82,7 +82,7 @@ const remove = async () => {
 <template>
   <div class="p-6 space-y-6">
     <div class="flex items-center gap-4">
-      <NuxtLink to="/" class="text-gray-500 hover:text-gray-800 text-xl">←</NuxtLink>
+      <NuxtLink to="/finance" class="text-gray-500 hover:text-gray-800 text-xl">←</NuxtLink>
       <h1 class="text-2xl font-bold text-gray-800">Edit Record</h1>
     </div>
 
@@ -139,7 +139,7 @@ const remove = async () => {
 
       <div class="flex gap-3 mt-6">
         <button @click="remove" :disabled="isDeletingTransaction" class="flex-1 bg-red-50 hover:bg-red-100 disabled:bg-red-50 disabled:cursor-not-allowed text-red-600 disabled:text-red-400 font-semibold text-lg py-4 rounded-xl transition-colors border border-red-200 flex items-center justify-center gap-2">
-          <span v-if="isDeletingTransaction" class="inline-block animate-spin">⏳</span>
+          <span v-if="isDeletingTransaction" class="inline-block animate-spin"> ⏳</span>
           {{ isDeletingTransaction ? 'Deleting...' : 'Delete' }}
         </button>
         <button @click="save" :disabled="isEditingTransaction" class="flex-[2] bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white font-semibold text-lg py-4 rounded-xl transition-colors flex items-center justify-center gap-2">

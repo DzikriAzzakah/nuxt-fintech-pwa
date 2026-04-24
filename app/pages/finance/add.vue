@@ -47,7 +47,7 @@ const submit = async () => {
 
   try {
     await addTransaction(transactionData)
-    navigateTo('/')
+    navigateTo('/finance')
   } catch (err) {
     console.error('addTransaction failed:', err)
     error.value = err?.message ?? 'Failed to save. Check console for details.'
@@ -58,7 +58,7 @@ const submit = async () => {
 <template>
   <div class="p-6 space-y-6">
     <div class="flex items-center gap-4">
-      <NuxtLink to="/" class="text-gray-500 hover:text-gray-800 text-xl">←</NuxtLink>
+      <NuxtLink to="/finance" class="text-gray-500 hover:text-gray-800 text-xl">←</NuxtLink>
       <h1 class="text-2xl font-bold text-gray-800">Add Record</h1>
     </div>
 
